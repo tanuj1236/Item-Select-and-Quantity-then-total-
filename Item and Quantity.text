@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table, th, td {
+        border:1px solid black;
+      }
+      </style>
+</head>
+
+<body>
+    
+    <table style="width:60%">
+        <tr>
+            <th colspan="3" style="font-size: xx-large; color: crimson;">Fruits Menu Card</th>
+        </tr>
+        <tr>
+            <th style="font-size: xx-large;">Index</th>
+            <th style="font-size: xx-large;">Item</th>
+            <th style="font-size:xx-large;">Price</th>
+        </tr>
+    <tr>
+        <th>1</th>
+        <th>Mango</th>
+        <th>50/KG</th>
+    </tr>
+    <tr>
+        <th>2</th>
+        <th>Banana</th>
+        <th>40/KG</th>
+    </tr>
+    <tr>
+        <th>3</th>
+        <th>StrawBerry</th>
+        <th>90/KG</th>
+    </tr>
+    <tr>
+        <th>4</th>
+        <th>Orange</th>
+        <th>30/KG</th>
+    </tr>
+    <tr>
+        <th>5</th>
+        <th>Grapes</th>
+        <th>70/KG</th>
+    </tr>
+    <tr>
+        <th>6</th>
+        <th>Guawa</th>
+        <th>20/KG</th>
+    </tr>
+    <tr>
+        <th>7</th>
+        <th>Apple</th>
+        <th>120/KG</th>
+    </tr>
+    <tr>
+        <th>8</th>
+        <th>Watermelon</th>
+        <th>40/KG</th>
+    </tr>
+
+    
+    </table>
+    <br><br><br>
+<LAbel>Items</LAbel>
+<LAbel> Quantity</LAbel>
+          <select id="item">
+    <option value="1"> Mango</option>
+    <option value="2"> Banana</option>
+    <option value="3"> StrawBerry</option>
+    <option value="4"> Orange</option>
+    <option value="5"> Guawa</option>
+    <option value="6">Grapes</option>
+    <option value="7"> Apple</option>
+    <option value="8"> Watermelon</option>
+    </select>
+    
+    <select id="quantity">
+    <option value="1"> 1KG</option>
+    <option value="2"> 2KG</option>
+    <option value="3"> 3KG</option>
+    <option value="4"> 4KG</option>
+    <option value="5"> 5KG</option>
+</select>
+<button onclick="disp()">Submit</button>
+<button onclick="display()">Display</button>
+
+<br><br>
+Item Name:-<span id="se"></span>
+<br>
+Item Quantity:-<span id="st"></span>
+<br>
+
+
+Total:- <Span id="sr"></Span>
+
+<script>
+    var data1=[]
+    var data2=[]
+    function disp(){
+        var x=document.getElementById("item").value;
+        var y=document.getElementById("quantity").value;
+        data1.push(x)
+        data2.push(y)
+    }
+    function display()
+    {
+        var total1=0,total2=0,total3=0,total4=0,total5=0,total6=0,total7=0,total8=0;
+        
+        for(let i=0;i<data1.length;i++)
+        {
+            if(data1[i]==1)
+            {
+                total1 = 50*data2[i];
+            }
+            if(data1[i]==2)
+            {
+                total2 = 40*data2[i];
+            }
+            if(data1[i]==3)
+            {
+                total3 = 90*data2[i];
+            }
+            if(data1[i]==4)
+            {
+                total4 = 30*data2[i];
+            }
+            if(data1[i]==5)
+            {
+                total5 = 70*data2[i];
+            }
+            if(data1[i]==6)
+            {
+                total6 = 20*data2[i];
+            }
+            if(data1[i]==7)
+            {
+                total7= 120*data2[i];
+            }
+            if(data1[i]==8)
+            {
+                total8 = 40*data2[i];
+            }
+        }
+        for(let i=0;i<data1.length;i++)
+        {
+            document.getElementById("se").innerHTML=data1
+        }
+        var sum=0;
+        for(let i=0;i<data2.length;i++)
+        {
+            sum+=parseInt(data2[i]);
+        }
+        var total=total1+total2+total3+total4+total5+total6+total7+total8;
+        document.getElementById("sr").innerHTML=total
+        document.getElementById("st").innerHTML=sum
+        
+    }
+
+</script>
+
+</body>
+</html>
